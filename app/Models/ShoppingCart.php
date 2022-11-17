@@ -14,13 +14,13 @@ class ShoppingCart extends Model
     ];
 
     //Relación n a n
-    public function roles()
+    public function medicines()
     {
         return $this->belongsToMany(Role::class);
     }
 
     //Relación 1 a n
-    public function role()
+    public function petOwer()
     {
         return $this->belongsTo(Role::class);
     }

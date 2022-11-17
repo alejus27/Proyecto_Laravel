@@ -20,11 +20,11 @@ class PetOwner extends Migration
             $table->string('email');
             $table->string('address');
 
-            $table->bigInteger('order_id')->unsigned()->unique();
+            $table->bigInteger('order_id')->unsigned();
             $table->foreign('order_id')->references('id')
                                     ->on('orders');
 
-            $table->bigInteger('cart_id')->unsigned()->unique();
+            $table->bigInteger('cart_id')->unsigned();
             $table->foreign('cart_id')->references('id')
                                     ->on('shopping_carts');
 

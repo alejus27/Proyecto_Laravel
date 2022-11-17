@@ -9,6 +9,8 @@ class PetOwner extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
         'phone',
@@ -19,7 +21,7 @@ class PetOwner extends Model
     ];
 
     //Relación 1 a n
-    public function users()
+    public function carts()
     {
         return $this->hasMany(User::class);
     }

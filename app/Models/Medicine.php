@@ -16,14 +16,14 @@ class Medicine extends Model
     ];
 
      //Relación 1 a 1
-     public function profile()
+     public function category()
      {
          return $this->hasOne(Profile::class);
      }
  
 
     //Relación n a n
-    public function roles()
+    public function carts()
     {
         return $this->belongsToMany(Role::class);
     }

@@ -15,7 +15,7 @@ class Order extends Model
     ];
 
     //Relación 1 a n
-    public function role()
+    public function petOwner()
     {
         return $this->belongsTo(Role::class);
     }

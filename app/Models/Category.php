@@ -16,7 +16,7 @@ class Category extends Model
     ];
 
     //Indicar que le pertenece a un usuario
-    public function user()
+    public function category()
     {
         return $this->belongsTo(User::class, 'category_id');
     }

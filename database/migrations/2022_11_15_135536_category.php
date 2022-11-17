@@ -19,7 +19,7 @@ class Category extends Migration
             $table->string('description');
             $table->timestamps();
 
-            $table->bigInteger('medicine_id')->unsigned()->unique();
+            $table->bigInteger('medicine_id')->unsigned();
             $table->foreign('medicine_id')->references('id')
                                     ->on('medicines');
 

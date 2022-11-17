@@ -16,11 +16,11 @@ class CartMedicine extends Migration
         Schema::create('cart_medicines', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('cart_id')->unsigned()->unique();
+            $table->bigInteger('cart_id')->unsigned();
             $table->foreign('cart_id')->references('id')
                                     ->on('shopping_carts');
 
-            $table->bigInteger('medicine_id')->unsigned()->unique();
+            $table->bigInteger('medicine_id')->unsigned();
             $table->foreign('medicine_id')->references('id')
                                     ->on('medicines');
 
