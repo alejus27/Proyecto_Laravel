@@ -17,8 +17,7 @@ class Medicine extends Migration
             $table->id();
             $table->string('name');
             $table->string('price');
-            $table->string('expiration_date');
-
+            $table->timestamps();
          });
     }
 

@@ -10,19 +10,20 @@ class ShoppingCart extends Model
     use HasFactory;
 
     protected $fillable = [
-        'quantity'
+        'quantity',
+        'user_id'
     ];
 
     //Relación n a n
     public function medicines()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Medicine::class);
     }
 
     //Relación 1 a n
-    public function petOwer()
+    public function petOwner()
     {
-        return $this->belongsTo(Role::class);
+        return $this->belongsTo(ShoppingCart::class);
     }
 
 

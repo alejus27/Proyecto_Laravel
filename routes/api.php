@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartMedicineController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MedicineDetailController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PetOwnerController;
@@ -16,11 +16,11 @@ Route::controller(CartMedicineController::class)->group(function () {
     Route::put('cartMedicine/{id}', 'update'); //Para actualizar
 });
 
-Route::controller(CategoryController::class)->group(function () {
-    Route::get('category','index'); //Para obtener todos
-    Route::get('category/{id}', 'show'); //Para consultar especifico
-    Route::post('category', 'store'); //Para guardar
-    Route::put('category/{id}', 'update'); //Para actualizar
+Route::controller(MedicineDetailController::class)->group(function () {
+    Route::get('medicineDetail','index'); //Para obtener todos
+    Route::get('medicineDetail/{id}', 'show'); //Para consultar especifico
+    Route::post('medicineDetail', 'store'); //Para guardar
+    Route::put('medicineDetail/{id}', 'update'); //Para actualizar
 });
 
 Route::controller(MedicineController::class)->group(function () {

@@ -5,20 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class MedicineDetail extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'category',
         'description',
+        'expiration_date',
         'medicine_id'
     ];
 
     //Indicar que le pertenece a un usuario
-    public function category()
+    public function medicines()
     {
-        return $this->belongsTo(User::class, 'category_id');
+        return $this->belongsTo(Medicine::class, 'medicine_id');
     }
 
 }

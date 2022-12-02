@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Category extends Migration
+class MedicineDetail extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class Category extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('medicine_details', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('category');
             $table->string('description');
+            $table->string('expiration_date');
             $table->timestamps();
 
             $table->bigInteger('medicine_id')->unsigned();

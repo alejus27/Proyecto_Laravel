@@ -11,21 +11,20 @@ class Medicine extends Model
 
     protected $fillable = [
         'name',
-        'price',
-        'expiration_date'
+        'price'
     ];
 
      //Relación 1 a 1
-     public function category()
+     public function medicineDetails()
      {
-         return $this->hasOne(Profile::class);
+         return $this->hasOne(MedicineDetails::class);
      }
  
 
     //Relación n a n
-    public function carts()
+    public function shoppingCarts()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(ShoppingCart::class);
     }
 
 }

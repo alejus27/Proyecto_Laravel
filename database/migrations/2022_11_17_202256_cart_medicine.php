@@ -15,6 +15,7 @@ class CartMedicine extends Migration
     {
         Schema::create('cart_medicines', function (Blueprint $table) {
             $table->id();
+            $table->timestamps();
 
             $table->bigInteger('cart_id')->unsigned();
             $table->foreign('cart_id')->references('id')

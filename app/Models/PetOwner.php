@@ -15,15 +15,19 @@ class PetOwner extends Model
         'name',
         'phone',
         'email',
-        'address',
-        'order_id',
-        'cart_id'
+        'address'
     ];
 
     //Relación 1 a n
-    public function carts()
+    public function shoppingCarts()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(ShoppingCart::class);
+    }
+
+    //Relación 1 a n
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 
 }

@@ -10,13 +10,14 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'status'
+        'status',
+        'user_id'
     ];
 
     //Relación 1 a n
-    public function petOwner()
+    public function order()
     {
-        return $this->belongsTo(Role::class);
+        return $this->belongsTo(Order::class);
     }
 
 }
