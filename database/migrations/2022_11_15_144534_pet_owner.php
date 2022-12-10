@@ -12,16 +12,16 @@ class PetOwner extends Migration
      * @return void
      */
     public function up()
-    {   
+    {
         Schema::create('pet_owners', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('phone');
             $table->string('email');
             $table->string('address');
+            $table->string('password');
             $table->timestamps();
-         });
-       
+        });
     }
 
     /**

@@ -19,13 +19,12 @@ class CartMedicine extends Migration
 
             $table->bigInteger('cart_id')->unsigned();
             $table->foreign('cart_id')->references('id')
-                                    ->on('shopping_carts');
+                ->on('shopping_carts');
 
             $table->bigInteger('medicine_id')->unsigned();
             $table->foreign('medicine_id')->references('id')
-                                    ->on('medicines');
-
-         });
+                ->on('medicines');
+        });
     }
 
     /**

@@ -15,7 +15,8 @@ class PetOwner extends Model
         'name',
         'phone',
         'email',
-        'address'
+        'address',
+        'password'
     ];
 
     //Relación 1 a n
@@ -30,4 +31,22 @@ class PetOwner extends Model
         return $this->hasMany(Order::class);
     }
 
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }

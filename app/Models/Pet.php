@@ -16,7 +16,6 @@ class Pet extends Model
         'color',
         'weight',
         'breed',
-        'id_pet_owner',
-        'id_clinic_history'
+        'id_pet_owner'
     ];
 }

@@ -22,10 +22,8 @@ class MedicineDetail extends Migration
 
             $table->bigInteger('medicine_id')->unsigned();
             $table->foreign('medicine_id')->references('id')
-                                    ->on('medicines');
-
-
-         });
+                ->on('medicines');
+        });
     }
 
     /**
