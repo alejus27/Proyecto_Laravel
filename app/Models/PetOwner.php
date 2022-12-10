@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Passport\HassApiTokens;
 
 class PetOwner extends Model
 {
@@ -15,7 +16,8 @@ class PetOwner extends Model
         'name',
         'phone',
         'email',
-        'address'
+        'address',
+        'password'
     ];
 
     //Relación 1 a n

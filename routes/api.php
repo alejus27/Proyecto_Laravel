@@ -12,12 +12,16 @@ use App\Http\Controllers\PetOwnerController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\VeterinaryController;
+use App\Http\Controllers\SecurityController;
 use App\Models\Diagnosis;
 use App\Models\Veterinary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-
+Route::controller(SecurityController::class)->group(function () {
+    Route::post('login', 'login');
+    Route::post('logout', 'logout');
+});
 
 Route::controller(CartMedicineController::class)->group(function () {
     Route::get('cartMedicine','index'); //Para obtener todos

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\PetOwner;
 use Illuminate\Http\Request;
 
@@ -22,10 +23,23 @@ class PetOwnerController extends Controller
     }
 
     //Crea el objeto y lo mete a la db
-    public function store(Request $request){
-        $the_petOwner=PetOwner::create($request->all());
-        return response($the_petOwner,201);
+    public function store(Request $request)
+    {
+        try {
+            $data = $request->validate([
+                'name' => 'required',
+                'email' => 'required|email',
+                'password' => 'required'
+            ]);
+            $data['password'] = bcrypt($request->password);
+            $user = PetOwner::create($data);
+            $token = $user->createToken('API Token')->accessToken;
+            return response(['user' => $user, 'token' => $token]);
+        } catch (Exception $e) {
+            return response(['data' => "Data incomplete "],400);
+        }
     }
+
     
     //Requiere los nuevos campos para obtener el body, luego tengo id para saber que elemento cambiar
     public function update(Request $request,$id){
