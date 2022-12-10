@@ -25,10 +25,10 @@ class PetOwnerController extends Controller
     //Crea el objeto y lo mete a la db
     public function store(Request $request)
     {
+        $the_petOwner=PetOwner::create($request->all());
+        return response($the_petOwner,201);
         try {
             $data = $request->validate([
-                'name' => 'required',
-                'email' => 'required|email',
                 'password' => 'required'
             ]);
             $data['password'] = bcrypt($request->password);
