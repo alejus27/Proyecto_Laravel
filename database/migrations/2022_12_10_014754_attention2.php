@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Attention extends Migration
+class Attention2 extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,6 @@ class Attention extends Migration
      * @return void
      */
     public function up()
-    {
-        //
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
     {
         Schema::create('attentions', function (Blueprint $table) {
             $table->id();
@@ -40,5 +30,15 @@ class Attention extends Migration
             $table->foreign('id_diagnosis')->references('id')
                 ->on('diagnosis');
         });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        
     }
 }
