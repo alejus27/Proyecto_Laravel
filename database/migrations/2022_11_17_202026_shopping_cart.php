@@ -20,8 +20,8 @@ class ShoppingCart extends Migration
 
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')
-                                    ->on('pet_owners');
-         });
+                ->on('pet_owners');
+        });
     }
 
     /**
