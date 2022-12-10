@@ -3,6 +3,7 @@
 use App\Http\Controllers\AttentionController;
 use App\Http\Controllers\AttentionServiceController;
 use App\Http\Controllers\CartMedicineController;
+use App\Http\Controllers\clinicalHistoryController;
 use App\Http\Controllers\MedicineDetailController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\OrderController;
@@ -98,6 +99,13 @@ Route::controller(VeterinaryController::class)->group(function () {
     Route::get('veterinary/{id}', 'show'); //Para consultar especifico
     Route::post('veterinary', 'store'); //Para guardar
     Route::put('veterinary/{id}', 'update'); //Para actualizar
+});
+
+Route::controller(clinicalHistoryController::class)->group(function () {
+    Route::get('clinicalhistory','index'); //Para obtener todos
+    Route::get('clinicalhistory/{id}', 'show'); //Para consultar especifico
+    Route::post('clinicalhistory', 'store'); //Para guardar
+    Route::put('clinicalhistory/{id}', 'update'); //Para actualizar
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

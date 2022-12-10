@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Attention;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,4 +15,9 @@ class Service extends Model
         'description',
         'price'
     ];
+
+    public function attentions()
+    {
+        return $this->belongsToMany(Attention::class);
+    }
 }

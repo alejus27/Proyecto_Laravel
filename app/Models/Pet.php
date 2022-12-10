@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use ClinicalHistory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,7 +17,19 @@ class Pet extends Model
         'color',
         'weight',
         'breed',
-        'id_pet_owner',
-        'id_clinic_history'
+        'id_pet_owner'
     ];
+
+    public function clinicalHistory()
+    {
+        return $this->hasOne(ClinicalHistory::class);
+    }
+
+    public function veterinaries()
+    {
+        return $this->belongsToMany(Veterinary::class);
+    }
+
+
+
 }
