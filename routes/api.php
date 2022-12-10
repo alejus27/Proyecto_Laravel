@@ -52,8 +52,8 @@ Route::controller(OrderController::class)->group(function () {
 });
 
 Route::controller(PetOwnerController::class)->group(function () {
-    Route::get('petOwner','index')->middleware(['user-access']);     
-    Route::get('petOwner/{id}', 'show')->middleware(['user-access']);
+    Route::get('petOwner','index');//->middleware(['user-access']);     
+    Route::get('petOwner/{id}', 'show');//->middleware(['user-access']);
     Route::post('petOwner', 'store'); //Para guardar
     Route::put('petOwner/{id}', 'update'); //Para actualizar
 });
