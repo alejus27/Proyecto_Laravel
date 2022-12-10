@@ -17,6 +17,8 @@ use App\Models\Veterinary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+
 Route::controller(CartMedicineController::class)->group(function () {
     Route::get('cartMedicine','index'); //Para obtener todos
     Route::get('cartMedicine/{id}', 'show'); //Para consultar especifico
@@ -46,8 +48,8 @@ Route::controller(OrderController::class)->group(function () {
 });
 
 Route::controller(PetOwnerController::class)->group(function () {
-    Route::get('petOwner','index'); //Para obtener todos
-    Route::get('petOwner/{id}', 'show'); //Para consultar especifico
+    Route::get('petOwner','index')->middleware(['user-access']);     
+    Route::get('petOwner/{id}', 'show')->middleware(['user-access']);
     Route::post('petOwner', 'store'); //Para guardar
     Route::put('petOwner/{id}', 'update'); //Para actualizar
 });
